@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Player {
 
-    private static Scanner input = new Scanner(System.in);
+    public static Scanner input = new Scanner(System.in);
     private String name;
     private char symbol;
 
@@ -17,17 +17,18 @@ public class Player {
         this.symbol = symbol;
     }
 
-    public int getMove() {
-        int move;
+    public Coordinates getMove() {
+        int row, column;
         try {
-            move = input.nextInt();
+            row = input.nextInt();
+            column = input.nextInt();
+            return new Coordinates(row, column);
         } catch (InputMismatchException e) {
             input.nextLine();
             //the user needs to enter a valid move
-            move = -1;
+            return new Coordinates(-1, -1);
         }
 
-        return move;
     }
 
     public String getName() {

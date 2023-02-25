@@ -40,6 +40,8 @@ public abstract class Game {
             switch (choice) {
                 default: {
                     System.out.println("\n\nOK OK, I am leaving now\nThank you for trying to crash me -_-");
+                    APP_ON = false;
+                    break;
                 }
                 case 1: {
                     System.out.println("\n\n\n");
@@ -60,19 +62,16 @@ public abstract class Game {
     public void play() {
         boolean gameOn = true;
         Coordinates coordinates;
-        int position;
         while (gameOn) {
             for (int turn : new int[]{0, 1}) {
                 System.out.print("Player ");
                 System.out.print(turn + 1);
                 System.out.println(" turn");
                 board.display();
-                position = players[turn].getMove();
-                coordinates = transform(position);
+                coordinates = players[turn].getMove();
                 while (!isValidMove(coordinates)) {
                     System.out.println("please enter a valid move...\n");
-                    position = players[turn].getMove();
-                    coordinates = transform(position);
+                    coordinates = players[turn].getMove();
                 }
 
                 board.update(coordinates, players[turn].getSymbol());
