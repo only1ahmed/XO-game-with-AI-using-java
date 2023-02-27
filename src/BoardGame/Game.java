@@ -1,8 +1,5 @@
 package BoardGame;
 
-import BoardGame.Board;
-import BoardGame.Coordinates;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,7 +17,7 @@ public abstract class Game {
         boolean APP_ON = true;
         String player1;
         String player2;
-        welcome_message();
+        welcomeMessage();
         System.out.println("\n\nplease player1 enter your name: ");
         player1 = input.nextLine();
         System.out.println("please player2 enter your name: ");
@@ -68,6 +65,7 @@ public abstract class Game {
                 System.out.print(turn + 1);
                 System.out.println(" turn");
                 board.display();
+
                 coordinates = players[turn].getMove();
                 while (!isValidMove(coordinates)) {
                     System.out.println("please enter a valid move...\n");
@@ -76,16 +74,17 @@ public abstract class Game {
 
                 board.update(coordinates, players[turn].getSymbol());
 
-                if (board.is_winner(players[turn])) {
+                if (board.isWinner(players[turn])) {
                     System.out.print("\nCongrats  player");
                     System.out.print(turn + 1);
                     System.out.print(" " + players[turn].getName());
                     System.out.println("!!");
+
                     gameOn = false;
                     break;
                 }
 
-                if (board.is_draw()) {
+                if (board.isDraw()) {
                     System.out.println("\nGG, it is a draw!\n");
                     gameOn = false;
                     break;
@@ -101,7 +100,7 @@ public abstract class Game {
         return board.isValidMove(coordinates);
     }
 
-    protected abstract void welcome_message();
+    protected abstract void welcomeMessage();
 
     protected abstract void initPlayers(String player1, String player2);
 

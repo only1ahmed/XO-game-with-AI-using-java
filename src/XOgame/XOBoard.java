@@ -34,7 +34,7 @@ public class XOBoard extends Board {
     }
 
     @Override
-    public boolean is_winner(Player player) {
+    public boolean isWinner(Player player) {
         int numberOfCells;
         for (char[] row : board) {
             numberOfCells = 0;
@@ -80,7 +80,7 @@ public class XOBoard extends Board {
     }
 
     @Override
-    public boolean is_draw() {
+    public boolean isDraw() {
         for (char[] row : board) {
             for (char cell : row) {
                 if (cell == ' ') {

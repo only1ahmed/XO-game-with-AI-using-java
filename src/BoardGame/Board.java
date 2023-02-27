@@ -25,9 +25,9 @@ public abstract class Board {
 
     public abstract boolean isValidMove(Coordinates coordinates);
 
-    public abstract boolean is_winner(Player player);
+    public abstract boolean isWinner(Player player);
 
-    public abstract boolean is_draw();
+    public abstract boolean isDraw();
 
     protected abstract void boardFill();
 
