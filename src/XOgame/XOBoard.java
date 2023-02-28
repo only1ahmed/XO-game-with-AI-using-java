@@ -88,6 +88,7 @@ public class XOBoard extends Board {
                 }
             }
         }
+        // it returns true even if there is someone who won in the last more, make sure to call it after checking that there is no one who won.
         return true;
     }
 

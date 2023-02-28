@@ -16,9 +16,9 @@ public abstract class Board {
     public void update(Coordinates coordinates, char value) {
         int row = coordinates.getRow();
         int column = coordinates.getColumn();
-        if (isValidMove(coordinates)) {
-            board[row][column] = value;
-        }
+//        if (isValidMove(coordinates)) {
+        board[row][column] = value;
+//        }
     }
 
     public abstract void display();

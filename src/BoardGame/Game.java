@@ -15,9 +15,9 @@ public abstract class Game {
 
     public void run() {
         boolean APP_ON = true;
+        welcomeMessage();
         String player1;
         String player2;
-        welcomeMessage();
         System.out.println("\n\nplease player1 enter your name: ");
         player1 = input.nextLine();
         System.out.println("please player2 enter your name: ");
