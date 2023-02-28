@@ -7,7 +7,7 @@ public abstract class Game {
     protected Board board;
     protected Player[] players;
 
-    private static Scanner input = new Scanner(System.in);
+    protected static Scanner input = new Scanner(System.in);
 
     public Game() {
         initBoard();
@@ -16,13 +16,7 @@ public abstract class Game {
     public void run() {
         boolean APP_ON = true;
         welcomeMessage();
-        String player1;
-        String player2;
-        System.out.println("\n\nplease player1 enter your name: ");
-        player1 = input.nextLine();
-        System.out.println("please player2 enter your name: ");
-        player2 = input.nextLine();
-        initPlayers(player1, player2);
+        menu();
         play();
         int choice;
         while (APP_ON) {
@@ -43,6 +37,7 @@ public abstract class Game {
                 case 1: {
                     System.out.println("\n\n\n");
                     initBoard();
+                    menu();
                     play();
                     break;
                 }
@@ -102,7 +97,9 @@ public abstract class Game {
 
     protected abstract void welcomeMessage();
 
-    protected abstract void initPlayers(String player1, String player2);
+    protected abstract void menu();
+
+    protected abstract void initPlayers(Player player1, Player player2);
 
     protected abstract void initBoard();
 
