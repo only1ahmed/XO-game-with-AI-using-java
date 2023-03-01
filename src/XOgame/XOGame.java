@@ -32,7 +32,7 @@ public class XOGame extends Game {
                         input.nextLine();
                         System.out.println("\n\nplease player1 enter your name: ");
                         player1 = input.nextLine();
-                        initPlayers(new XOPlayer(player1, 'X'), new ComputerPlayer((XOBoard) board, 'O'));
+                        initPlayers(new XOPlayer(player1, 'X'), new XOComputerPlayer((XOBoard) board, 'O'));
                         choiceOn = false;
                     }
                     case 2 -> {

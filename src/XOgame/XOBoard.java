@@ -8,6 +8,7 @@ public class XOBoard extends Board {
 
     XOBoard(int rows, int columns) {
         super(rows, columns);
+        boardFill(' ');
     }
 
     @Override
@@ -88,16 +89,8 @@ public class XOBoard extends Board {
                 }
             }
         }
-        // it returns true even if there is someone who won in the last more, make sure to call it after checking that there is no one who won.
+        // it returns true even if there is someone who won in the last move, make sure to call it after checking that there is no one who won.
         return true;
     }
 
-    @Override
-    public void boardFill() {
-        for (int row = 0; row < 3; row++) {
-            for (int column = 0; column < 3; column++) {
-                board[row][column] = ' ';
-            }
-        }
-    }
 }

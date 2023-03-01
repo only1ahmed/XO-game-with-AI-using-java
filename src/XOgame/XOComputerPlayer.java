@@ -1,15 +1,14 @@
 package XOgame;
 
 import BoardGame.Coordinates;
-import BoardGame.Player;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
-public class ComputerPlayer extends XOPlayer {
+public class XOComputerPlayer extends XOPlayer {
     private XOBoard board;
-    
-    public ComputerPlayer(XOBoard board, char symbol) {
+
+    public XOComputerPlayer(XOBoard board, char symbol) {
         super("Computer", symbol);
         this.board = board;
     }

@@ -10,7 +10,6 @@ public abstract class Board {
         board = new char[rowSize][columnSize];
         this.columnSize = columnSize;
         this.rowSize = columnSize;
-        boardFill();
     }
 
     public void update(Coordinates coordinates, char value) {
@@ -21,6 +20,14 @@ public abstract class Board {
 //        }
     }
 
+    protected void boardFill(char symbol) {
+        for (int row = 0; row < rowSize; row++) {
+            for (int column = 0; column < columnSize; column++) {
+                board[row][column] = symbol;
+            }
+        }
+    }
+
     public abstract void display();
 
     public abstract boolean isValidMove(Coordinates coordinates);
@@ -29,6 +36,5 @@ public abstract class Board {
 
     public abstract boolean isDraw();
 
-    protected abstract void boardFill();
 
 }
